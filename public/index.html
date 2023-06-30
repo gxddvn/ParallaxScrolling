@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>ParallaxScrolling</title>
+</head>
+<body>
+    <header class="parallax_header">
+        <a href="#" class="ph_logo">Logo</a>
+        <nav class="ph_nav">
+            <a href="#" class="phn_a phna_active">Home</a>
+            <a href="#" class="phn_a">About</a>
+            <a href="#" class="phn_a">Work</a>
+            <a href="#" class="phn_a">Contact</a>
+        </nav>
+    </header>
+    <div class="img_container">
+        <img src="../img/stars.png" class="ic_img" id="stars" alt="">
+        <img src="../img/moon.png" class="ic_img" id="moon" alt="">
+        <img src="../img/mountains_behind.png" class="ic_img" id="mountains_behind" alt="">
+        <h2 class="ic_h2" id="text">Moon Light</h2>
+        <a href="#pm_sec" class="ic_butt" id="butt">Explore</a>
+        <img src="../img/mountains_front.png" class="ic_img" id="mountains_front" alt="">
+    </div>
+    <main class="parallax_main" id="pm_sec">
+        <h2 class="pm_h2">Parallax Scrolling Effects</h2>
+        <p class="pm_p">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat delectus quam, cum voluptates voluptate quo. 
+            Sequi id voluptate quibusdam repudiandae animi modi aliquid, quod delectus magnam optio dolore velit quas!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Nulla nisi possimus unde numquam veniam perferendis animi! 
+            Recusandae omnis ab cupiditate quis aut, exercitationem odit culpa animi rerum! Corrupti, nam voluptatibus!<br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat delectus quam, cum voluptates voluptate quo. 
+            Sequi id voluptate quibusdam repudiandae animi modi aliquid, quod delectus magnam optio dolore velit quas!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Nulla nisi possimus unde numquam veniam perferendis animi! 
+            Recusandae omnis ab cupiditate quis aut, exercitationem odit culpa animi rerum! Corrupti, nam voluptatibus!<br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.<br><br>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
+            Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. 
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat delectus quam, cum voluptates voluptate quo. 
+            Sequi id voluptate quibusdam repudiandae animi modi aliquid, quod delectus magnam optio dolore velit quas!
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+            Nulla nisi possimus unde numquam veniam perferendis animi! 
+            Recusandae omnis ab cupiditate quis aut, exercitationem odit culpa animi rerum! Corrupti, nam voluptatibus!
+        </p>
+    </main>
+
+    <script>
+        let stars = document.getElementById('stars');
+        let moon = document.getElementById('moon');
+        let mountains_behind = document.getElementById('mountains_behind');
+        let text = document.getElementById('text');
+        let butt = document.getElementById('butt');
+        let mountains_front = document.getElementById('mountains_front');
+        let header = document.querySelector('header');
+
+        window.addEventListener('scroll', function() {
+            let value = window.scrollY;
+            stars.style.left = value * 0.25 + 'px';
+            moon.style.top = value * 1 + 'px';
+            mountains_behind.style.top = value * 0.5 + 'px';
+            mountains_front.style.top = value * 0 + 'px';
+            text.style.marginRight = value * 4 + 'px';
+            text.style.marginTop = value * 1.5 + 'px';
+            butt.style.marginTop = value * 1.5 + 'px';
+            header.style.top = value * 0.5 + 'px';
+        })
+    </script>
+</body>
+</html>
